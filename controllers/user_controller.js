@@ -403,7 +403,9 @@ exports.forgotPassword = async (req, res) => {
     await user.save();
 
     //create url for reset password
-    const resetURL = `https://sociobook.netlify.app/reset/password/${resetPasswordToken}`;
+    const resetURL = `${req.protocol}://${req.get(
+      "host"
+    )}/reset/password/${resetPasswordToken}`;
 
     //create message
     const message = `Reset Your password by clicking on the below link: \n\n ${resetURL}`;
