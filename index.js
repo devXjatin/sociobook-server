@@ -7,6 +7,7 @@ require("./config/passport-jwt");
 connectDB();
 const cloudinary = require("cloudinary");
 const path = require("path");
+const cors = require('cors');
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config({ path: "backend/env/config.env" });
   
 }
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
