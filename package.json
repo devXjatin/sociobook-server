@@ -4,10 +4,7 @@
   "description": "Social Media Application",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm install"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jatin",
   "license": "ISC",
